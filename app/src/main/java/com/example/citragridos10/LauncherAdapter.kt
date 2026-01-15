@@ -121,15 +121,24 @@ class LauncherAdapter(
     ) : RecyclerView.ViewHolder(itemView) {
         private val iconView: ImageView = itemView.findViewById(R.id.appIcon)
         private val iconBackgroundView: ImageView = itemView.findViewById(R.id.iconBackground)
+        private val appNameView: TextView = itemView.findViewById(R.id.appName)
 
         fun bind(
             appInfo: AppInfo,
             onAppClick: (AppInfo) -> Unit,
             onAppLongClick: (AppInfo) -> Boolean
         ) {
-            // Apply custom icon styling
-            val styledIcon = iconPackManager?.getStyledIcon(appInfo.icon, appInfo.packageName)
-                ?: appInfo.icon
+            // Set app name
+            appNameView.text = appInfo.label
+
+            // Apply custom icon styling or use default icon if no icon available
+            val styledIcon = if (appInfo.icon != null) {
+                iconPackManager?.getStyledIcon(appInfo.icon, appInfo.packageName)
+                    ?: appInfo.icon
+            } else {
+                // Use default icon if app has no icon
+                itemView.context.getDrawable(R.drawable.default_icon_app)
+            }
 
             iconView.setImageDrawable(styledIcon)
 

@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:gravity="center"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:foreground="?android:attr/selectableItemBackground">
 
     <FrameLayout
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_gravity="center"
-        android:padding="8dp">
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center">
 
         <!-- Background image layer -->
         <ImageView
             android:id="@+id/iconBackground"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/app_icon_frame"
-            android:contentDescription="Icon background" />
+            android:contentDescription="Icon background"
+            android:scaleType="fitCenter"
+            android:src="@drawable/app_icon_frame" />
 
         <!-- App icon layer -->
         <ImageView
@@ -27,9 +28,22 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"
+            android:padding="6dp"
             android:scaleType="fitCenter"
-            android:padding="4dp" />
+            android:src="@drawable/default_icon_app" />
 
     </FrameLayout>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="App Name"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+</LinearLayout>

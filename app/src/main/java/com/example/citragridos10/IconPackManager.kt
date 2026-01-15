@@ -23,8 +23,6 @@ class IconPackManager(private val context: Context) {
      * Apply custom styling to an app icon
      */
     fun getStyledIcon(originalIcon: Drawable?, packageName: String): Drawable? {
-        if (originalIcon == null) return null
-
         // 1. Check if there's a custom icon image for this package
         customIconMap[packageName]?.let { resourceId ->
             return context.getDrawable(resourceId)
@@ -37,7 +35,12 @@ class IconPackManager(private val context: Context) {
             }
         }
 
-        // 3. Use original icon with styling
+        // 3. If no original icon, return default icon
+        if (originalIcon == null) {
+            return context.getDrawable(R.drawable.default_icon_app)
+        }
+
+        // 4. Use original icon with styling
         val bitmap = originalIcon.toBitmap(256, 256)
         val styledBitmap = applyIconStyle(bitmap)
 
