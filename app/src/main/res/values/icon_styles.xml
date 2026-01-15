@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Icon customization options -->
+    <bool name="use_custom_icons">true</bool>
+    <bool name="apply_icon_shadows">true</bool>
+    <bool name="use_rounded_icons">true</bool>
+
+    <!-- Icon shape options: circle, squircle, rounded_square, square -->
+    <string name="icon_shape">squircle</string>
+
+    <!-- Icon size in dp -->
+    <dimen name="icon_size">64dp</dimen>
+    <dimen name="icon_corner_radius">16dp</dimen>
+</resources>

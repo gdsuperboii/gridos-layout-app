@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder for icon background image -->
+<!-- Replace with actual image in drawable folder -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#1A1A1A" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+
+    <!-- You can add an image layer here -->
+    <!-- Uncomment and replace with your image -->
+    <!--
+    <item>
+        <bitmap
+            android:src="@drawable/your_icon_background_image"
+            android:gravity="fill" />
+    </item>
+    -->
+
+    <!-- Border overlay -->
+    <item>
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="1dp"
+                android:color="#444444" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+</layer-list>
