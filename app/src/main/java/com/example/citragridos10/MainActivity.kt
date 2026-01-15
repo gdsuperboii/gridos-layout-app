@@ -1,7 +1,6 @@
 package com.example.citragridos10
 
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
@@ -48,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         // TODO: Replace R.drawable.background_gif with your actual GIF file
         // Place your GIF file in res/drawable/ folder
         // For now, using a placeholder - uncomment the line below when you add your GIF
-       backgroundView.setBackgroundGif(R.drawable.background_gif)
+       backgroundView.setBackgroundGif(R.drawable.background_gif_2)
 
         // Temporary: Using a static image as placeholder
         // You can also use: backgroundView.setBackgroundFromPath("/path/to/your/gif.gif")
